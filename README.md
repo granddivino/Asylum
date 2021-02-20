@@ -1,1 +1,1 @@
-![](frontend/public/img/Mern.jpg)
+![Mern](https://miro.medium.com/max/900/0*UqGyYmWCRQnjLzSk.jpg)
