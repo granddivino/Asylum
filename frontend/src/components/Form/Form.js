@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 //7. What's used to convert images! 
 import FileBase from 'react-file-base64'
@@ -6,6 +6,7 @@ import useStyles from './styles'
 
 
 const Form = () => {
+    const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' })
     const classes = useStyles()
 
     const handleSubmit = async () => {
