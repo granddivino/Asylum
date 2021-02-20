@@ -7,7 +7,7 @@ const router = express.Router()
 
 //TRY and CATCH: Try- Happens if successful Catch- Happens if error happens
 
-//Controller for getPosts
+//Controller for getting all Posts
 export const getPosts = async (req, res) => {
     try {
         //Finding something inside of a model takes time so await needs to be added here and async in getPosts function
@@ -17,10 +17,23 @@ export const getPosts = async (req, res) => {
     } catch (error) {
         res.status(404).json({ message: error.message })
     }
-} 
+}
+
+//Controller for getting one post
+export const getPost = async (req, res) => { 
+    const { id } = req.params;
+
+    try {
+        const post = await PostMessage.findById(id)
+        
+        res.status(200).json(post);
+    } catch (error) {
+        res.status(404).json({ message: error.message })
+    }
+}
 
 //Controller for createPost
-export const createPost = (req, res) => {
+export const createPost = async (req, res) => {
     const { title, message, selectedFile, creator, tags } = req.body
     const newPostMessage = new PostMessage({ title, message, selectedFile, creator, tags })
 
