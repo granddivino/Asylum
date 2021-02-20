@@ -48,6 +48,16 @@ So Asylum is a website that’s meant for LGBTQ related posts and events. The ce
 
 I will link these later.
 
+## Routes
+| CRUD     | Route                | Function                                                         |
+|----------|----------------------|------------------------------------------------------------------|
+| `GET`    | `/`                  | Get home page                                                    |
+| `GET`    | `/:id`               | Gets single post by ID                                           |
+| `POST`   | `/`                  | Route to create a post on homepage                               |
+| `PATCH`  | `/:id`               | Used for updating existing documents (in place of UPDATE or PUT) |
+| `DELETE` | `/:id`               | To delete single post                                            |
+| `PATCH`  | `/:id/likePost`      | Updating the number of likes a post has                          | 
+
 ## Pitch Deck:
 Proposal submitted to instructors:
 Weapons of choice: MERN (MongoDB, Express, React, Node)
