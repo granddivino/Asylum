@@ -15,7 +15,6 @@ const Post = ({ post, setCurrentId }) => {
             <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
           </div>
           <div className={classes.overlay2}>
-            {/* 112. Empty onclick inside object {()} at first //131. Add other stuff inside after  */}
             <Button style={{ color: 'white' }} size="small" onClick={() => setCurrentId(post._id)}><MoreHorizIcon fontSize="default" /></Button>
           </div>
           <div className={classes.details}>
