@@ -5,6 +5,10 @@ export default (posts = [], action) => {
     switch (action.type) {
         case FETCH_ALL:
           return action.payload
+        //159. maps over the posts and finds what is the post that was liked and return the post with the change
+        // and if the post was not liked, then return the post as it was
+        case LIKE:
+          return posts.map((post) => (post._id === action.payload._id ? action.payload : post))  
         case CREATE:
           return [...posts, action.payload]
         case UPDATE:
