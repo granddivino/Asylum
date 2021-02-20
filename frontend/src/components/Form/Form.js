@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { TextField, Button, Typography, Paper } from '@material-ui/core'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -13,6 +13,11 @@ const Form = ({ currentId, setCurrentId }) => {
     const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null))
     const dispatch = useDispatch()
     const classes = useStyles()
+
+    useEffect(() => {
+      //If post exists, set postdata, then populate it with data from the post
+      if (post) setPostData(post)
+    }, [post])
 
     const clear = () => {
 
