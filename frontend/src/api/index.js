@@ -7,7 +7,10 @@ const url = 'http://localhost:8000/posts'
 export const fetchPosts = () => axios.get(url);
 //Create post
 export const createPost = (newPost) => axios.post(url, newPost)
+//Api request to like post
+export const likePost = (id) => axios.patch(`${url}/${id}/likePost`)
 //Receiving id and updatedpost with function with instant return to the indicated url and id, and second parameter is sending over the updated post
 export const updatePost = (id, updatedPost) => axios.patch(`${url}/${id}`, updatedPost)
 //Deletes post by id
 export const deletePost = (id) => axios.delete(`${url}/${id}`)
+
