@@ -5,3 +5,5 @@ const url = 'http://localhost:8000/posts'
 
 //Axios call to URL
 export const fetchPosts = () => axios.get(url);
+//Create post
+export const createPost = (newPost) => axios.post(url, newPost)
