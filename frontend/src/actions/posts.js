@@ -1,3 +1,4 @@
+//Import constants for action types
 import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes'
 //Import everything from actions as api
 import * as api from '../api/index.js'

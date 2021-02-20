@@ -1,3 +1,4 @@
+//Imports constants for action types
 import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes'
 
 //In reducers, the state always has to be equal to something
