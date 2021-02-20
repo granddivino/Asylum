@@ -7,3 +7,5 @@ const url = 'http://localhost:8000/posts'
 export const fetchPosts = () => axios.get(url);
 //Create post
 export const createPost = (newPost) => axios.post(url, newPost)
+//Receiving id and updatedpost with function with instant return to the indicated url and id, and second parameter is sending over the updated post
+export const updatePost = (id, updatedPost) => axios.patch(`${url}/${id}`, updatedPost)
