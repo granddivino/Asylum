@@ -21,11 +21,11 @@ export const getPosts = async (req, res) => {
 
 //Controller for createPost
 export const createPost = (req, res) => {
-    const post = req.body
-    const newPostMessage = new PostMessage
+    const { title, message, selectedFile, creator, tags } = req.body
+    const newPostMessage = new PostMessage({ title, message, selectedFile, creator, tags })
 
     try {
-        await newPostMessage.save();
+        await newPostMessage.save()
         res.status(201).json(newPostMessage )
     } catch (error) {
         res.status(409).json({ message: error.message })
