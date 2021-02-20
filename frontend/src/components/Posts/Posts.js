@@ -3,6 +3,7 @@ import React from 'react'
 import { Grid, CircularProgress } from '@material-ui/core'
 //Need to fetch data from global redux store, and that's what selector is for
 import { useSelector } from 'react-redux'
+import Post from './Post/Post'
 import useStyles from './styles'
 
 
@@ -16,7 +17,7 @@ const Posts = ({ setCurrentId }) => {
               {posts.map((post) => (
                 <Grid key={post._id} item xs={12} sm={6} md={6}>
                     {/* Props drilling: sending same prop over and over again to the most child component */}
-                    <Post post={post} setCurrentId={setCurrentId}/>
+                    <Post post={post} setCurrentId={setCurrentId} />
                 </Grid>
                 ))}
             </Grid>
