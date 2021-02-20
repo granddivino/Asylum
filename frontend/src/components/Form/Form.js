@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { TextField, Button, Typography, Paper } from '@material-ui/core'
+import { useDispatch } from 'react-redux'
 
 //7. What's used to convert images! 
 import FileBase from 'react-file-base64'
@@ -7,14 +9,15 @@ import useStyles from './styles'
 
 const Form = () => {
     const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' })
+    const dispatch = useDispatch()
     const classes = useStyles()
 
     const clear = () => {
-        
+
     }
 
     const handleSubmit = async () => {
-
+        e.preventDefault()
     }
 
     return (
