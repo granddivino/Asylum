@@ -7,9 +7,19 @@ import useStyles from './styles'
 
 const Form = () => {
     const classes = useStyles()
-    return( 
-    <h1>FORM</h1> 
-    ) 
-} 
+
+    const handleSubmit = async () => {
+
+    }
+
+    return (
+        <Paper className={classes.paper}>
+          <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
+            <Typography variant="h6">{currentId ? `Currently Editing: "${post.title}"` : 'Create an Event/Announcement!'}</Typography>
+          </form>
+        </Paper> 
+      )
+}
+
 
 export default Form
