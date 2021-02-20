@@ -12,7 +12,9 @@ router.get('/:id', getPost)
 //PATCH route - used for updating existing documents (similar to UPDATE)
 router.patch('/:id', updatePost)
 //DELETE route - to delete single post
-router.delete('/:id', deletePost);
+router.delete('/:id', deletePost)
+//LIKE route - route for liking a post -- patch is updating the number of likes a post has
+router.patch('/:id/likePost', likePost)
 
 
 export default router
