@@ -29,4 +29,15 @@ export const createPost = (req, res) => {
     }
 }
 
+export const updatePost = async (req, res) => {
+    //Extract id from req.params -- start with {id: _id} req.params
+    const { id: _id } = req.params
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`)
+
+    await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true })
+
+    res.json(updatedPost)
+}
+
+
 export default router
