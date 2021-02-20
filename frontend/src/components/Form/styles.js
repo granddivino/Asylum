@@ -1,4 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, createMuiTheme } from '@material-ui/core/styles'
+import red from '@material-ui/core/colors/red';
+import green from '@material-ui/core/colors/green';
 
 export default makeStyles((theme) => ({
     root: {
@@ -26,5 +28,12 @@ export default makeStyles((theme) => ({
       marginBottom: 15,
     },
     
+    
+    palette: {
+      primary: green,
+      secondary: red,
+    },
+    
+
   }));
   

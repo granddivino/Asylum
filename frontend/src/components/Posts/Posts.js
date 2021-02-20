@@ -13,7 +13,7 @@ const Posts = ({ setCurrentId }) => {
     // If there is no posts.length then return this. This is what shows loader when posts haven't loaded on page yet
     return (
         !posts.length ? <CircularProgress /> : (
-            <Grid className={classes.container} container alignItems="stretch" spacing={8}>
+            <Grid className={classes.container} container alignItems="stretch" spacing={10}>
               {posts.map((post) => (
                 <Grid key={post._id} item xs={12} sm={6} md={6}>
                     {/* Props drilling: sending same prop over and over again to the most child component */}
