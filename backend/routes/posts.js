@@ -9,8 +9,10 @@ router.get('/', getPosts)
 router.post('/', createPost)
 //GET route - single post, by id
 router.get('/:id', getPost)
-//PATCH used for updating existing documents (similar to UPDATE)
+//PATCH route - used for updating existing documents (similar to UPDATE)
 router.patch('/:id', updatePost)
+//DELETE route - to delete single post
+router.delete('/:id', deletePost);
 
 
 export default router

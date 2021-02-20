@@ -7,6 +7,7 @@ const router = express.Router()
 
 //TRY and CATCH: Try- Happens if successful Catch- Happens if error happens
 
+//Controller for getPosts
 export const getPosts = async (req, res) => {
     try {
         //Finding something inside of a model takes time so await needs to be added here and async in getPosts function
@@ -18,6 +19,7 @@ export const getPosts = async (req, res) => {
     }
 } 
 
+//Controller for createPost
 export const createPost = (req, res) => {
     const post = req.body
     const newPostMessage = new PostMessage
@@ -30,6 +32,7 @@ export const createPost = (req, res) => {
     }
 }
 
+//Controller for updatePost
 export const updatePost = async (req, res) => {
     //Extract id from req.params -- start with {id: _id} req.params
     const { id: _id } = req.params
@@ -41,8 +44,18 @@ export const updatePost = async (req, res) => {
     
     await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true })
 
-
     res.json(updatedPost)
+}
+
+//Controller for deletePost
+export const deletePost = async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+
+    await PostMessage.findByIdAndRemove(id);
+
+    res.json({ message: "Post deleted successfully." });
 }
 
 
