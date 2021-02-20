@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect} from 'react'
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core'
 //Dispatch for use in redux to dispatch an action
 import { useDispatch } from 'react-redux'
@@ -9,6 +9,7 @@ import useStyles from './styles'
 
 
 const App = () => {
+  const [currentId, setCurrentId] = useState(0)
   const dispatch = useDispatch()
   const classes = useStyles()
 
