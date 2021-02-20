@@ -7,11 +7,16 @@ import mongoose from 'mongoose';
 //Enables cross origin requests
 import cors from 'cors';
 
+import postRoutes from './routes/posts.js';
+
 const app = express()
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors())
+
+//28. Every route inside of postRoutes starts with posts i.e. localhost8000/posts
+app.use('/posts', postRoutes);
 
 //Declaring connection URL with cluster made on MongoDB
 const CONNECTION_URL = 'mongodb+srv://Rainbow:Rainbow123@backend.w0rqf.mongodb.net/<dbname>?retryWrites=true&w=majority'
@@ -24,3 +29,5 @@ mongoose.connect(
         PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)
     ))
     .catch((error) => console.log(`${error} did not connect`))
+
+mongoose.set('useFindAndModify', false);
