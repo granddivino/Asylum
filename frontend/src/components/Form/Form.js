@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { TextField, Button, Typography, Paper } from '@material-ui/core'
 import { useDispatch } from 'react-redux'
 
-//7. What's used to convert images! 
+//What's used to convert images! 
 import FileBase from 'react-file-base64'
 import useStyles from './styles'
+import { createPost } from '../../actions/posts'
 
 
 const Form = () => {
@@ -16,8 +17,9 @@ const Form = () => {
 
     }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
+        dispatch(createPost(postData))
     }
 
     return (
