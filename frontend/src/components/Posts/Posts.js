@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 import useStyles from './styles'
 
 
-const Posts = () => {
+const Posts = ({ setCurrentId }) => {
     const posts = useSelector((state) => state.posts)
     const classes = useStyles()
     // If there is no posts.length then return this. This is what shows loader when posts haven't loaded on page yet
@@ -16,7 +16,7 @@ const Posts = () => {
               {posts.map((post) => (
                 <Grid key={post._id} item xs={12} sm={6} md={6}>
                     {/* Props drilling: sending same prop over and over again to the most child component */}
-                    <Post />
+                    <Post post={post} setCurrentId={setCurrentId}/>
                 </Grid>
                 ))}
             </Grid>
