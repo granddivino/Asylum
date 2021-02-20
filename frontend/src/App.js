@@ -10,6 +10,11 @@ import useStyles from './styles'
 const App = () => {
   const dispatch = useDispatch()
   const classes = useStyles()
+
+  useEffect(() => {
+    dispatch(getPosts())
+  }, [dispatch])
+
   return (
     <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
