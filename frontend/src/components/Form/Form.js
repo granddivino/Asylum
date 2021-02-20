@@ -9,6 +9,10 @@ const Form = () => {
     const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' })
     const classes = useStyles()
 
+    const clear = () => {
+        
+    }
+
     const handleSubmit = async () => {
 
     }
