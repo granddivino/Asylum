@@ -7,6 +7,9 @@ const reducer = (state, action) => {
           return action.payload
         case CREATE:
           return [...posts, action.payload]
+        case UPDATE:
+          //Mapping over post arrays, changing something in there and returning changed array
+          return posts.map((post) => (post._id === action.payload._id ? action.payload : post));  
         default:
           return posts
     }
